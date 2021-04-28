@@ -82,6 +82,10 @@ open class LocationRepository: NSObject {
         validStatuses.contains(CLLocationManager.authorizationStatus())
     }
     
+    public func isNotDeterminedAuthorization() -> Bool {
+        CLLocationManager.authorizationStatus() == .notDetermined
+    }
+    
     public func isDeniedAuthorization() -> Bool {
         CLLocationManager.authorizationStatus() == .denied
     }
